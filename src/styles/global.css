@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark-mode header,
+body.dark-mode header > div,
+body.dark-mode nav {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+  border-color: #374151 !important;
+}
+
+body.dark-mode footer {
+  background: #030712 !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-mode main {
+  background: #0f172a !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode button,
+body.dark-mode a,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e5e7eb;
+}
+
+body.dark-mode [class*="bg-white"],
+body.dark-mode [class*="bg-neutral-200"],
+body.dark-mode [class*="bg-[whitesmoke]"] {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+  border-color: #374151 !important;
+}
+
+.boutique-pin {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 42px;
+  border-radius: 16px 16px 16px 0;
+  transform: rotate(-45deg);
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+}
+
+.boutique-pin::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  top: 9px;
+  left: 9px;
+}
+
+.boutique-pin__dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  left: 9px;
+  top: 9px;
+  background: #0ea5e9;
+}
+
+.boutique-pin--active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  animation: boutique-pin-pulse 1.6s infinite;
+}
+
+@keyframes boutique-pin-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
